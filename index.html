@@ -188,29 +188,29 @@ function buildCards(gid,stats,total,showObj){
     var OBJ_MR_V = showObj ? (OBJ_MR[n]||0) : 0;
     var rowCde='<div style="border-bottom:1px solid #eeeeee">'
       +'<div style="padding:7px 18px;background:#f7f5fa;border-bottom:1px solid #eeeeee"><span style="font-size:13px;font-weight:700;letter-spacing:1px;color:#9b8ea8">● Commandes en attente</span></div>'
-      +'<div style="display:grid;grid-template-columns:repeat(9,1fr);align-items:start;padding:4px 0">'
+      +'<div style="display:grid;grid-template-columns:repeat(9,1fr);align-items:start;align-content:start;padding:4px 0">'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Commandes</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Commandes</div>'
         +'<div style="display:flex;align-items:baseline;gap:4px"><span style="font-size:28px;font-weight:400;color:#1a1a2e">'+d.cde+'</span></div></div>'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Marge à venir</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Marge à venir</div>'
         +'<div style="font-size:22px;font-weight:400;color:#1a1a2e">'+(d.mr_prev?((d.mr_prev>=0?"+":"")+Math.round(d.mr_prev).toLocaleString('fr-FR')+'\u00a0\u20ac'):'\u2014')+'</div>'
         +' </div>'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">FI en attente</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">FI en attente</div>'
         +'<div style="font-size:28px;font-weight:400;color:#1a1a2e">'+(d.fi_att||0)+'</div>'
         +(d.cde>0?'<div style="font-size:11px;font-weight:600;color:#c05040;margin-top:3px">IP '+Math.round((d.fi_att||0)/d.cde*100)+'%</div>':'')+' </div>'
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">CA FI</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">CA FI</div>'
         +'<div style="font-size:22px;font-weight:400;color:#1a1a2e">'+((d.ca_att||0)>0?Math.round(d.ca_att||0).toLocaleString('fr-FR')+'\u00a0\u20ac':'\u2014')+'</div>'
         +' </div>'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Cessions</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Cessions</div>'
         +'<div style="font-size:28px;font-weight:400;color:#1a1a2e">'+(d.cess_pending>0?d.cess_pending:'\u2014')+'</div></div>'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Reprises</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Reprises</div>'
         +'<div style="font-size:28px;font-weight:400;color:#1a1a2e">'+(d.rep_cde>0?d.rep_cde:'\u2014')+'</div></div>'
 
-      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Frais Admin</div>'
+      +'<div style="padding:14px 16px;border-right:1px solid #eeeeee;vertical-align:top;align-self:start"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Frais Admin</div>'
         +'<div style="display:flex;align-items:baseline;gap:5px"><span style="font-size:22px;font-weight:400;color:#1a1a2e">'+(d.fa_cde||0)+'</span>'+(d.cde>0?'<span style="font-size:11px;font-weight:500;color:#c05040">'+Math.round((d.fa_cde||0)/d.cde*100)+'%</span>':'')+' </div></div>'
 
       +'<div style="padding:14px 16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#888;margin-bottom:8px">Bulbbee</div>'
